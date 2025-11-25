@@ -9,10 +9,10 @@
         // See also https://aka.ms/tsconfig/module
         "module": "commonjs",
         "target": "es2016",
-        "types": ["node"],
+        "types": ["node", "jest"],
         "lib": ["es6"],
         "moduleResolution": "node10",
-        "ignoreDeprecations": "6.0",
+        "ignoreDeprecations": "5.0",
         // For nodejs:
         // "lib": ["esnext"],
         // "types": ["node"],
