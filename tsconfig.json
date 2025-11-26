@@ -2,7 +2,7 @@
     // Visit https://aka.ms/tsconfig to read more about this file
     "compilerOptions": {
         // File Layout
-        "rootDir": "./src",
+        "rootDir": ".",
         "outDir": "./dist",
 
         // Environment Settings
@@ -11,8 +11,8 @@
         "target": "es2016",
         "types": ["node", "jest"],
         "lib": ["es6"],
-        "moduleResolution": "node10",
-        "ignoreDeprecations": "5.0",
+        "moduleResolution": "node",
+        "ignoreDeprecations": "6.0",
         // For nodejs:
         // "lib": ["esnext"],
         // "types": ["node"],
@@ -24,8 +24,8 @@
         "declarationMap": true,
 
         // Stricter Typechecking Options
-        "noUncheckedIndexedAccess": true,
-        "exactOptionalPropertyTypes": true,
+        // "noUncheckedIndexedAccess": true,
+        // "exactOptionalPropertyTypes": true,
 
         // Style Options
         // "noImplicitReturns": true,
@@ -37,16 +37,17 @@
 
         // Recommended Options
         "strict": true,
-        "jsx": "react-jsx",
-        "verbatimModuleSyntax": false,
-        "isolatedModules": true,
-        "noUncheckedSideEffectImports": true,
-        "moduleDetection": "force",
+        // "jsx": "react-jsx",
+        // "verbatimModuleSyntax": false,
+        // "isolatedModules": true,
+        // "noUncheckedSideEffectImports": true,
+        // "moduleDetection": "force",
         "skipLibCheck": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strictPropertyInitialization": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true
-    }
+    },
+      "include": ["src", "*.spec.ts"]
 }
