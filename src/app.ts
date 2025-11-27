@@ -1,12 +1,22 @@
+import 'reflect-metadata'
 import express, { Request, Response, NextFunction } from 'express'
 import logger from './config/logger'
 import { HttpError } from 'http-errors'
+import authRouter from './routes/auth'
 
 const app = express()
 
+app.use(express.json())
+
 app.get('/', (req, res) => {
-    res.send('Welcome to auth service')
+    res.send('Welcome to Auth service')
 })
+
+// app.post('/auth/register', (req, res) => {
+//     res.status(201).send()
+// })
+
+app.use('/auth', authRouter)
 
 //global error handler
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
