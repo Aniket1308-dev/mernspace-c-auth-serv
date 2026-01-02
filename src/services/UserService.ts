@@ -7,6 +7,7 @@ import { Roles } from '../constants'
 
 export class UserService {
     constructor(private userRepository: Repository<User>) {}
+
     async create({ firstName, lastName, email, password }: UserData) {
         const user = await this.userRepository.findOne({
             where: { email: email },
@@ -34,5 +35,13 @@ export class UserService {
             )
             throw error
         }
+    }
+
+    async findByEmail(email: string) {
+        return this.userRepository.findOne({
+            where: {
+                email,
+            },
+        })
     }
 }
