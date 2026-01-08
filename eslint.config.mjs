@@ -2,7 +2,6 @@
 
 import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
-import { types } from 'util'
 
 export default tseslint.config(
     eslint.configs.recommended,
@@ -20,7 +19,7 @@ export default tseslint.config(
     {
         languageOptions: {
             parserOptions: {
-                projectService: true,
+                project: './tsconfig.eslint.json',  // ← Changed from projectService
                 tsconfigRootDir: import.meta.dirname,
             },
         },
