@@ -11,19 +11,18 @@ describe('POST /auth/register', () => {
     let connection: DataSource
 
     beforeAll(async () => {
-        //Initialize the database connection
         connection = await AppDataSource.initialize()
     })
 
     beforeEach(async () => {
-        //Database truncate
         await connection.dropDatabase()
         await connection.synchronize()
     })
 
     afterAll(async () => {
-        //Close database connection
-        await connection.destroy()
+        if (connection && connection.isInitialized) {
+            await connection.destroy()
+        }
     })
 
     describe('Given all fields', () => {
