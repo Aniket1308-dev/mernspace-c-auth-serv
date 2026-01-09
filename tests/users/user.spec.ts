@@ -49,7 +49,7 @@ describe('GET /auth/self', () => {
             // Register user
             const userData = {
                 firstName: 'Aniket',
-                lastName: 'Vakkithody',
+                lastName: 'Devadas',
                 email: 'aniketdevadas@gmail.com',
                 password: 'secret',
             }
@@ -79,7 +79,7 @@ describe('GET /auth/self', () => {
             // Register user
             const userData = {
                 firstName: 'Aniket',
-                lastName: 'Vakkithody',
+                lastName: 'Devadas',
                 email: 'aniketdevadas@gmail.com',
                 password: 'secret',
             }

@@ -106,10 +106,10 @@ describe('POST /users', () => {
             })
 
             const userData = {
-                firstName: 'Rakesh',
-                lastName: 'K',
-                email: 'rakesh@mern.space',
-                password: 'password',
+                firstName: 'Aniket',
+                lastName: 'Devadas',
+                email: 'aniketdevadas@gmail.com',
+                password: 'secret',
                 tenantId: tenant.id,
             }
 
