@@ -14,7 +14,7 @@ export class TokenService {
             throw error
         }
         try {
-            privateKey = Config.PRIVATE_KEY
+            privateKey = Config.PRIVATE_KEY.replace(/\\n/g, '\n')
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
             const error = createHttpError(
