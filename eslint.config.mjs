@@ -15,6 +15,7 @@ export default tseslint.config(
             'scripts/**/*',
             '**/*.mjs',
             'coverage',
+            '.github',
         ],
     },
     {
