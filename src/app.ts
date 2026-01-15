@@ -1,6 +1,7 @@
 import 'reflect-metadata'
 import express, { Request, Response, NextFunction } from 'express'
 import logger from './config/logger'
+import cors from 'cors'
 import { HttpError } from 'http-errors'
 import authRouter from './routes/auth'
 import cookieParser from 'cookie-parser'
@@ -8,6 +9,13 @@ import tenantRouter from './routes/tenant'
 import userRouter from './routes/user'
 
 const app = express()
+app.use(
+    cors({
+        // todo: move to .env file.
+        origin: ['http://localhost:5174'],
+        credentials: true,
+    }),
+)
 app.use(express.static('public'))
 app.use(cookieParser())
 app.use(express.json())
