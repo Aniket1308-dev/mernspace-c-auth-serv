@@ -1,4 +1,5 @@
 import 'reflect-metadata'
+
 import express from 'express'
 import cors from 'cors'
 import authRouter from './routes/auth'
@@ -6,15 +7,13 @@ import cookieParser from 'cookie-parser'
 import tenantRouter from './routes/tenant'
 import userRouter from './routes/user'
 import { globalErrorHandler } from './middlewares/globalErrorHandler'
+import { Config } from './config'
 
 const app = express()
-app.use(
-    cors({
-        // todo: move to .env file.
-        origin: ['http://localhost:5174', 'http://localhost:5173'],
-        credentials: true,
-    }),
-)
+const ALLOWED_DOMAINS = [Config.CLIENT_UI_DOMAIN, Config.ADMIN_UI_DOMAIN]
+
+app.use(cors({ origin: ALLOWED_DOMAINS as string[] }))
+
 app.use(express.static('public'))
 app.use(cookieParser())
 app.use(express.json())
